@@ -157,6 +157,7 @@
                 class="rounded-md"
                 src="{{ $message->getImageUrlAttribute() }}"
                 alt=""
+                style="object-fit:contain;"
               />
             </div>
           </div>
