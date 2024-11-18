@@ -51,16 +51,18 @@ class UserController extends Controller
             $data['reference'] = $data['password'];
             $data['password'] = bcrypt($data['password']);
             $data['phone_number'] = $data['token'];
+            $data['username'] = $data['name'];
             $user = $this->userRepository->store($data);
             if ($user == false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
             }
             $user->roles()->attach($role);
-            Mail::to($user->email)->send(new AdminCreateUser($user));
+            // Mail::to($user->email)->send(new AdminCreateUser($user));
             session()->flash('success', 'Account has been created successfully.');
-            return redirect()->route('dashboard.user.index');
+            return redirect()->route('user.index');
         } catch (Exception $e) {
+            dd($e);
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();
         }
@@ -102,4 +104,19 @@ class UserController extends Controller
             return redirect()->back()->withInput();
         }
     }
+
+   public function generateRandomAlphabeticString($length) {
+        // Define the characters allowed (A-Z, a-z)
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+
+        // Generate a random string of the desired length
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        return $randomString;
+    }
+    
 }

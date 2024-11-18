@@ -6,26 +6,14 @@
   <div class="npc_page_wrapper">
     <div class="npc_page">
       <!-- sidebar section -->
-      <div class="npc_sidebar_wrapper">
-        <div class="npc_sidebar">
-          <a class="npc_sidebar_button active" href="{{ url('about') }}">
-            About
-          </a>
-          <a class="npc_sidebar_button" href="{{ url('bod') }}">
-            Board Member
-          </a>
-          <a class="npc_sidebar_button" href="{{ url('staff') }}">
-            Staff
-          </a>
-        </div>
-      </div>
+    
 
       <!-- content area section -->
-      <div class="npc_content_area_wrapper">
+      <div class="npc_content_area_wrapper" style="width: 70%; margin: auto;">
         <div class="npc_content">
           <div id="npc_about" class="npc_content_wrapper active">
             <div class="npc_about_content">
-              <h2>Introduction</h2>
+              <h2 style="font-size: 32px; font-weight: 600; margin-bottom: 20px;">Introduction</h2>
                {!! $about->content !!}
             </div>
           </div>

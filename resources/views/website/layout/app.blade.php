@@ -16,10 +16,10 @@
 </head>
 <body>
     @include('website.layout.header')
-    @include('website.layout.breadcrumb')
+    {{-- @include('website.layout.breadcrumb') --}}
 
 
-    <div class="contain" style="min-height: 600px;">
+    <div class="contain" style="min-height: 600px; margin-top: 10px;">
       @yield('content')
     </div>
 

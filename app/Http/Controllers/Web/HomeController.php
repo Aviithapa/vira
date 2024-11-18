@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Requests\Inquiry\CreateInquiryRequest;
+use App\Models\Course;
 use App\Models\CourseCategory;
 use App\Repositories\CMS\Post\PostRepository;
 use App\Repositories\College\CollegeRepository;
@@ -77,103 +78,21 @@ class HomeController extends BaseController
                     $this->viewData['banners'] = $this->postRepository->all()->where('type', 'homepage_banner')->first();;
                     $this->viewData['about'] = $this->postRepository->all()->where('type', 'about')->first();;
                     $this->viewData['message'] = $this->postRepository->all()->where('meta_link','message')->first();
-
-                    $this->viewData['news'] = $this->newsRepository->findByWithPagination('type', 'news', 5);
-
-                    $this->viewData['chairman'] = $this->postRepository->all()->where('excerpt','chairman')->first();
-                    $this->viewData['popup'] = $this->newsRepository->all()->where('is_popup', true)->first();
-                    $this->viewData['mediaItems'] = $this->viewData['popup']->media->map(function($media) {
-                        return [
-                            'file' => asset('storage/' . $media->path), // Generate the full URL for the file
-                            'type' => $media->mime_type === 'application/pdf' ? 'pdf' : 'image'
-                        ];
-                    });
                     break;
                 
                 case 'about':
-                    $this->viewData['about'] = $this->postRepository->findOrFail(28);
+                    $this->viewData['about'] = $this->postRepository->all()->where('type', 'about')->first();;
                     break;
                 
-                case 'bod':
-                    $this->viewData['members'] = $this->postRepository->all()->where('excerpt', 'member');
-                    $this->viewData['registrar'] = $this->postRepository->all()->where('excerpt','registrar')->first();
-                    $this->viewData['chairman'] = $this->postRepository->all()->where('excerpt','chairman')->first();
-                    break;
-                
-                case 'staff':
-                    $this->viewData['members'] = $this->postRepository->all()->where('type', 'team');
-                    break;
-                
-                case 'institutions':
-                    $this->viewData['diploma'] = $this->collegeRepository->all()->where('type', 'diploma');
+                case 'online-form':
+                    $this->viewData['program'] = Course::all();;
                     break;
 
-                case 'bachelor':
-                    $this->viewData['bachelor'] = $this->collegeRepository->all()->where('type', 'bachelor');
-                    break;
 
-                    case 'foreign':
-                        $this->viewData['bachelor'] = $this->collegeRepository->all()->where('type', 'foreign');
-                        break;
-
-                case 'requirement-diploma':
-                    $this->viewData['diploma_req'] = $this->postRepository->findOrFail(53);
-                    break;
-                
-                case 'requirement-bachelor':
-                    $this->viewData['bachelor_req'] = $this->postRepository->findOrFail(54);
-                    break;
-                
-                case 'act':
-                    $this->viewData['act'] = $this->postRepository->findOrFail(55);
-                    break;
-                
-                case 'regulation':
-                    $this->viewData['regulation'] = $this->postRepository->findOrFail(56);
-                    break;
-
-                case 'guidelines':
-                    $this->viewData['guidelines'] = $this->postRepository->findOrFail(59);
-                    break;
-                
-                case 'code-of-conduct':
-                    $this->viewData['code_of_conduct'] = $this->postRepository->findOrFail(61);
-                    break;
-
-                case 'cpd-activities': 
-                    $this->viewData['cpd'] = $this->postRepository->all()->where('type', 'cpd');
-                    break;
-                
-                case 'publication': 
-                    $this->viewData['publication'] = $this->postRepository->all()->where('type', 'publication');
-                    break;
-
-                    case 'gallary': 
+                case 'gallary': 
                         $this->viewData['gallery'] = $this->postRepository->all()->where('type', 'gallery');
                         break;
 
-                case 'syllabus': 
-                    $this->viewData['syllabus'] = $this->postRepository->all()->where('type', 'syllabus');
-                    break;
-
-                case 'news':
-                    $this->viewData['news'] = $this->newsRepository->findByWithPagination('type', 'news', 20);
-                    break;
-
-                
-
-                case 'blog':
-                    $this->viewData['blogs'] = $this->postRepository->findByWithPagination('type', 'blog', 12);
-                    break;
-
-                case 'about':
-                    $this->viewData['about'] = $this->postRepository->findBy('id', 27, ['title', 'image', 'content']);
-                    $this->viewData['banners'] = $this->postRepository->all()->where('type', 'homepage_banner');
-                    $this->viewData['galleries'] = $this->postRepository->findByWithPagination('type', 'gallery', 6);
-                    $this->viewData['services'] = $this->postRepository->findByWithPagination('type', 'services', 2);
-                    $this->viewData['about_video'] = $this->postRepository->findBy('id', 29, ['title', 'image', 'excerpt']);
-                    $this->viewData['why_us'] = $this->postRepository->findBy('id', 44, ['title', 'excerpt']);
-                    break;
                 
                 case 'contact':
                     

@@ -3,11 +3,12 @@
 @section('content')
 
 <div class="container mx-auto p-6">
-    <div class="flex justify-between">
-        <h1 class="text-2xl font-semibold mb-6">Course Categories</h1>
+    <!-- Heading and Navigation -->
+    <div class="flex flex-col md:flex-row justify-between">
+        <h1 class="text-2xl font-semibold mb-6 md:mb-0">Course Categories</h1>
 
         <!-- Tab Navigation -->
-        <div class="flex mb-6 space-x-5">
+        <div class="flex flex-wrap gap-2 md:gap-5">
             <!-- "All Courses" Button -->
             <button id="all-courses-btn"
                     class="px-2 py-1 text-[#102c52] text-sm bg-white border border-[#ddd] hover:bg-[#102c52] hover:text-white transition-all duration-300 min-w-[100px]"
@@ -30,27 +31,27 @@
         <div id="all-courses">
             <div class="bg-white">
                 <!-- All Courses Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach($categories as $category)
                         @foreach($category->courses as $course)
-                            <div class="border border-gray-300 p-6 shadow-sm hover:shadow-lg transition-shadow duration-200 rounded-lg">
-                                <img src="{{ $course->image_url }}" alt="{{ $course->title }} image" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                            <div class="border border-gray-300 p-4 shadow-sm hover:shadow-lg transition-shadow duration-200 rounded-lg">
+                                <img src="{{ $course->image_url }}" alt="{{ $course->title }} image" class="w-full h-40 sm:h-48 object-cover rounded-t-lg mb-4">
                                 
                                 <!-- Category Tag Below Image -->
                                 <div class="mt-2">
-                                    <span class="bg-[#102c52] text-white text-sm px-3 py-1">
+                                    <span class="bg-[#102c52] text-white text-xs sm:text-sm px-3 py-1">
                                         {{ $category->name }}
                                     </span>
                                 </div>
 
                                 <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-2">{{ $course->title }}</h3>
-                                    <p class="text-gray-500 mb-4">{!! Str::limit($course->description, 120) !!}</p>
+                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 mt-2">{{ $course->title }}</h3>
+                                    <p class="text-gray-500 text-sm sm:text-base mb-4">{!! Str::limit($course->description, 120) !!}</p>
                                 </div>
 
                                 <!-- Learn More Button -->
                                 <a href="{{ route('course-details', ['id' => $course->id]) }}" 
-                                   class="mt-3 inline-block px-4 py-2 bg-[#102c52] text-white text-sm rounded-lg hover:bg-[#1e4879]">
+                                   class="mt-3 inline-block px-3 py-2 bg-[#102c52] text-white text-xs sm:text-sm rounded-lg hover:bg-[#1e4879]">
                                     Learn More
                                 </a>
                             </div>
@@ -65,26 +66,26 @@
             <div id="category-{{ $category->id }}" class="hidden">
                 <div class="bg-white">
                     <!-- Course Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach($category->courses as $course)
-                            <div class="border border-gray-300 p-6 shadow-sm hover:shadow-lg transition-shadow duration-200 rounded-lg">
-                                <img src="{{ $course->image_url }}" alt="{{ $course->title }} image" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                            <div class="border border-gray-300 p-4 shadow-sm hover:shadow-lg transition-shadow duration-200 rounded-lg">
+                                <img src="{{ $course->image_url }}" alt="{{ $course->title }} image" class="w-full h-40 sm:h-48 object-cover rounded-t-lg mb-4">
                                 
                                 <!-- Category Tag Below Image -->
                                 <div class="mt-2">
-                                    <span class="bg-[#102c52] text-white text-sm px-3 py-1">
+                                    <span class="bg-[#102c52] text-white text-xs sm:text-sm px-3 py-1">
                                         {{ $category->name }}
                                     </span>
                                 </div>
 
                                 <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-2">{{ $course->title }}</h3>
-                                    <p class="text-gray-500 mb-4">{!! Str::limit($course->description, 120) !!}</p>
+                                    <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-2 mt-2">{{ $course->title }}</h3>
+                                    <p class="text-gray-500 text-sm sm:text-base mb-4">{!! Str::limit($course->description, 120) !!}</p>
                                 </div>
 
                                 <!-- Learn More Button -->
                                 <a href="{{ route('course-details', ['id' => $course->id]) }}" 
-                                   class="mt-3 inline-block px-4 py-2 bg-[#102c52] text-white text-sm rounded-lg hover:bg-[#1e4879]">
+                                   class="mt-3 inline-block px-3 py-2 bg-[#102c52] text-white text-xs sm:text-sm rounded-lg hover:bg-[#1e4879]">
                                     Learn More
                                 </a>
                             </div>
@@ -95,6 +96,7 @@
         @endforeach
     </div>
 </div>
+
 
 @endsection
 

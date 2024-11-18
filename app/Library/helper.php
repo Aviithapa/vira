@@ -18,6 +18,23 @@ function generateRandomUsername($length = 8)
     return $username;
 }
 
+if (!function_exists('generateRandomAlphabeticString')) {
+
+    function generateRandomAlphabeticString($length) {
+        // Define the characters allowed (A-Z, a-z)
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+
+        // Generate a random string of the desired length
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        return $randomString;
+    }
+}
+
 if (!function_exists('getSiteSetting')) {
     /**
      * @param $name

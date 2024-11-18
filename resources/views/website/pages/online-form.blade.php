@@ -19,7 +19,7 @@
         <!-- Name Fields -->
         <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             <div>
-                <label for="first_name" class="block font-medium text-gray-700">First Name</label>
+                <label for="first_name" class="block font-medium text-gray-700">First Name*</label>
                 <input type="text" name="first_name" value="{{ old('first_name') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
                 @error('first_name')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -35,7 +35,7 @@
             </div>
 
             <div>
-                <label for="last_name" class="block font-medium text-gray-700">Last Name</label>
+                <label for="last_name" class="block font-medium text-gray-700">Last Name*</label>
                 <input type="text" name="last_name" value="{{ old('last_name') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
                 @error('last_name')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -45,7 +45,7 @@
 
         <!-- District -->
         <div class="mt-4">
-            <label for="district" class="block font-medium text-gray-700">District</label>
+            <label for="district" class="block font-medium text-gray-700">District*</label>
             <input type="text" name="district" value="{{ old('district') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
             @error('district')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -55,7 +55,7 @@
         <!-- Contact Information -->
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 mt-4">
             <div>
-                <label for="mobile_number" class="block font-medium text-gray-700">Mobile Number</label>
+                <label for="mobile_number" class="block font-medium text-gray-700">Mobile Number*</label>
                 <input type="text" name="mobile_number" value="{{ old('mobile_number') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
                 @error('mobile_number')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -63,7 +63,7 @@
             </div>
 
             <div>
-                <label for="email" class="block font-medium text-gray-700">Email</label>
+                <label for="email" class="block font-medium text-gray-700">Email*</label>
                 <input type="email" name="email" value="{{ old('email') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
                 @error('email')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -83,7 +83,7 @@
         <!-- Gender, Program, and Shift -->
         <div class="grid grid-cols-1 gap-4 md:grid-cols-3 mt-4">
             <div>
-                <label for="gender" class="block font-medium text-gray-700">Gender</label>
+                <label for="gender" class="block font-medium text-gray-700">Gender*</label>
                 <select name="gender" class="w-full mt-1 border-gray-300 rounded-md shadow-sm">
                     <option value="">Select Gender</option>
                     <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
@@ -96,16 +96,28 @@
             </div>
 
             <div>
-                <label for="program" class="block font-medium text-gray-700">Programs</label>
-                <input type="text" name="program" value="{{ old('program') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
+                <label for="program" class="block font-medium text-gray-700">Programs*</label>
+                {{-- <input type="text" name="program" value="{{ old('program') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" /> --}}
+                <select name="program" class="w-full mt-1 border-gray-300 rounded-md shadow-sm">
+                    <option value="">Select Program</option>
+                    @foreach ($program as $pro)
+                        <option value="{{ $pro->title }}" {{ old('program') ==  $pro->title  ? 'selected' : '' }}>{{ $pro->title }}</option>
+                    @endforeach
+                </select>
                 @error('program')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                 @enderror
             </div>
 
             <div>
-                <label for="shift" class="block font-medium text-gray-700">Shift</label>
-                <input type="text" name="shift" value="{{ old('shift') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
+                <label for="shift" class="block font-medium text-gray-700">Shift*</label>
+                {{-- <input type="text" name="shift" value="{{ old('shift') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" /> --}}
+                <select name="shift" class="w-full mt-1 border-gray-300 rounded-md shadow-sm">
+                    <option value="">Select Shift</option>
+                    <option value="Morning" {{ old('shift') == 'Morning' ? 'selected' : '' }}>Morning</option>
+                    <option value="Afternoon" {{ old('shift') == 'Afternoon' ? 'selected' : '' }}>Afternoon</option>
+                    <option value="Evening" {{ old('shift') == 'Evening' ? 'selected' : '' }}>Evening</option>
+                </select>
                 @error('shift')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                 @enderror
@@ -114,7 +126,7 @@
 
         <!-- Qualification Information -->
         <div class="mt-4">
-            <label for="college_name" class="block font-medium text-gray-700">+2/Others Qualification - College Name</label>
+            <label for="college_name" class="block font-medium text-gray-700">College Name*</label>
             <input type="text" name="college_name" value="{{ old('college_name') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
             @error('college_name')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -123,7 +135,7 @@
 
         <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
-                <label for="total_gpa" class="block font-medium text-gray-700">11/12 Total GPA/%</label>
+                <label for="total_gpa" class="block font-medium text-gray-700">Total GPA/%</label>
                 <input type="text" name="total_gpa" value="{{ old('total_gpa') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
                 @error('total_gpa')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -133,7 +145,7 @@
 
         <!-- School Type -->
         <div class="mt-4">
-            <label for="school_type" class="block font-medium text-gray-700">SEE/SLC Qualification - School Type</label>
+            <label for="school_type" class="block font-medium text-gray-700">Qualification*</label>
             <input type="text" name="school_type" value="{{ old('school_type') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
             @error('school_type')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>

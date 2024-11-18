@@ -119,7 +119,7 @@
   <div class="testimonial_container">
     <div class="container bg-[var(--primaryColor)] flex flex-col text-white py-6 px-6 md:flex-row md:gap-16">
         <div class="container--fluid md:flex md:gap-16">
-          <div class="left order-2 py-4 space-y-6 md:order-1 md:w-[75%]">
+          <div class="left order-2 py-4 space-y-6 md:order-1 w-[70%]" style="width: 65%;">
             <div class="quotation_container">
               <span>
                 <svg
@@ -152,7 +152,7 @@
           </div>
 
           <div class="right order-1 flex justify-center">
-            <div class="img_container w-full max-w-[600px] h-auto">
+            <div class="img_container w-full  h-auto" style="min-width: 25%">
               <img
                 class="rounded-md"
                 src="{{ $message->getImageUrlAttribute() }}"

@@ -158,12 +158,13 @@
       <h2 class="">Vera institute</h2>
     </div>
     <div>
-      <button
+      <a
         class="capitalize p-3 font-bold flex items-center border border-[(--whiteColor)] gap-x-2 bg-[var(--whiteColor)] rounded text-[#553cdf] hover:bg-[#553cdf] hover:text-[var(--whiteColor)] hover:border-[var(--whiteColor)]"
+        href="/student-join"
       >
         <p>View All courses</p>
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-      </button>
+      </a>
     </div>
   </div>
 </main>

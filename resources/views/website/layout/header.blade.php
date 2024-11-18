@@ -3,7 +3,7 @@ class="fixed hidden inset-0 z-10 bg-[rgba(0,_0,_0,_0.4)]"
 id="nav_overlay"
 ></div>
 
-<header id="homeHeader">
+<header id="homeHeader" style="border-bottom: 1px solid #ddd;">
   <div class="hidden xl:block bg-[var(--primaryColor)] px-3 py-2">
     <div
       class="container--fluid text-white text-[0.875rem] flex justify-between items-center"
@@ -40,23 +40,23 @@ id="nav_overlay"
 
         <!-- nav links -->
         <nav class="hidden lg:flex items-center">
-          <div>
-            <a class="inline-block px-2 py-2 capitalize" href="/">home</a>
+          <div style="padding: 0px 10px">
+            <a class="inline-block px-2 py-2 capitalize hover:text-[var(--hoverColor)] " href="/">home</a>
           </div>
 
-          <div>
-            <a class="inline-block px-2 py-2 capitalize" href="/student-join"
+          <div style="padding: 0px 10px">
+            <a class="inline-block px-2 py-2 capitalize hover:text-[var(--hoverColor)] hover:text-bold" href="/student-join"
               >student join</a
             >
           </div>
 
-          <div>
-            <a class="inline-block px-2 py-2 capitalize" href="/online-form"
+          <div style="padding: 0px 10px">
+            <a class="inline-block px-2 py-2 capitalize hover:text-[var(--hoverColor)] " href="/online-form"
               >online form</a
             >
           </div>
-          <div>
-            <a class="inline-block px-2 py-2 capitalize" href="/contact"
+          <div style="padding: 0px 10px">
+            <a class="inline-block px-2 py-2 capitalize hover:text-[var(--hoverColor)] " href="/contact"
               >Contact</a
             >
           </div>
@@ -131,13 +131,18 @@ id="nav_overlay"
           </a>
         </div>
         <div class="border-b py-2 capitalize">
-          <a href="/">
+          <a href="/student-join">
             <span>student join</span>
           </a>
         </div>
         <div class="border-b py-2 capitalize">
-          <a href="/">
-            <span>forms</span>
+          <a href="/online-form">
+            <span>Admission Form</span>
+          </a>
+        </div>
+        <div class="border-b py-2 capitalize">
+          <a href="/contact">
+            <span>Contact Us</span>
           </a>
         </div>
       </nav>

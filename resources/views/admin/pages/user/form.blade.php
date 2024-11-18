@@ -32,7 +32,7 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12"> 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Name</label>
-                                                    <input type="text" class="form-control" placeholder="Name" name="username"  required value={{ isset($model) ? $model->username :old('name') }}>
+                                                    <input type="text" class="form-control" placeholder="Name" name="name"  required value={{ isset($model) ? $model->name :old('name') }}>
                                                       @if($errors->any())
                                                          {{ $errors->first('name') }}
                                                       @endif
@@ -50,12 +50,14 @@
                                              <div class="col-lg-6 col-md-6 col-sm-12"> 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Role</label>
-                                                        <select class="form-select mb-3" name="role">
-                                                           <option value={{ isset($model) ? $model->mainRole()->name : old('role') }}>{{ isset($model) ? $model->mainRole()->name : old('role') }}</option>
-                                                            @foreach($roles as $role)
-                                                                <option value={{ $role->name }}>{{ $role->name }}</option>
-                                                            @endforeach
-                                                        </select>
+                                                    <select class="form-select mb-3" name="role">
+                                                        @foreach($roles as $role)
+                                                            <option value="{{ $role->name }}" 
+                                                                {{ old('role', $selectedRole ?? '') === $role->name ? 'selected' : '' }}>
+                                                                {{ $role->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                       @if($errors->any())
                                                          {{ $errors->first('role') }}
                                                       @endif
@@ -64,11 +66,11 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12"> 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Status</label>
-                                                        <select class="form-select mb-3" name="status">
-                                                            <option value={{ isset($model) ? $model->status : old('status') }}>{{ isset($model) ? $model->status : old('status') }}</option>
-                                                            <option value="1">Active</option>
-                                                            <option value="0">In-Active</option>
-                                                        </select>
+                                                    <select class="form-select mb-3" name="status">
+                                                        <option value="1" {{ old('status', $model->status ?? '') == '1' ? 'selected' : '' }}>Active</option>
+                                                        <option value="0" {{ old('status', $model->status ?? '') == '0' ? 'selected' : '' }}>In-Active</option>
+                                                    </select>
+                                                    
                                                       @if($errors->any())
                                                          {{ $errors->first('status') }}
                                                       @endif

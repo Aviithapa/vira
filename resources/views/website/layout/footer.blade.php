@@ -36,17 +36,17 @@
         </h5>
         <ul class="space-y-4">
           <li>
-            <a class="capitalize hover:text-[var(--hoverColor)]" href=""
+            <a class="capitalize hover:text-[var(--hoverColor)]" href="/"
               >home</a
             >
           </li>
           <li>
-            <a class="capitalize hover:text-[var(--hoverColor)]" href=""
+            <a class="capitalize hover:text-[var(--hoverColor)]" href="/contact"
               >contact</a
             >
           </li>
           <li>
-            <a class="capitalize hover:text-[var(--hoverColor)]" href=""
+            <a class="capitalize hover:text-[var(--hoverColor)]" href="/about"
               >about</a
             >
           </li>
@@ -54,23 +54,53 @@
       </div>
       <div class="m2 space-y-6">
         <h5 class="text-[var(--titleColor)] font-extrabold text-lg">
-          Useful link 1
+          Useful Links
         </h5>
         <ul class="space-y-4">
           <li>
-            <a class="capitalize hover:text-[var(--hoverColor)]" href=""
-              >home</a
+            <a
+              class="capitalize hover:text-[var(--hoverColor)]"
+              href="https://www.nmc.org.np/"
+              target="_blank"
             >
+              Nepal Medical Council (NMC)
+            </a>
           </li>
           <li>
-            <a class="capitalize hover:text-[var(--hoverColor)]" href=""
-              >contact</a
+            <a
+              class="capitalize hover:text-[var(--hoverColor)]"
+              href="https://nepalpharmacycouncil.org.np/"
+              target="_blank"
             >
+              Nepal Pharmacy Council
+            </a>
           </li>
           <li>
-            <a class="capitalize hover:text-[var(--hoverColor)]" href=""
-              >about</a
+            <a
+              class="capitalize hover:text-[var(--hoverColor)]"
+              href="https://www.nhpc.org.np/"
+              target="_blank"
             >
+              Nepal Health Professional Council
+            </a>
+          </li>
+          <li>
+            <a
+              class="capitalize hover:text-[var(--hoverColor)]"
+              href="https://nnc.org.np/"
+              target="_blank"
+            >
+              Nepal Nursing Council
+            </a>
+          </li>
+          <li>
+            <a
+              class="capitalize hover:text-[var(--hoverColor)]"
+              href="https://www.nepalveterinarycouncil.org.np/"
+              target="_blank"
+            >
+              Nepal Veterinary Council
+            </a>
           </li>
         </ul>
       </div>
@@ -98,7 +128,7 @@
                   subscribe
                 </button>
               </div>
-              <div class="agree_container flex items-center gap-2">
+              {{-- <div class="agree_container flex items-center gap-2">
                 <input
                   class="accent-[var(--primaryColor)]"
                   type="checkbox"
@@ -108,7 +138,7 @@
                 <span class="text-sm"
                   >I agree to the terms of use and privacy policy.</span
                 >
-              </div>
+              </div> --}}
             </form>
           </div>
         </div>
