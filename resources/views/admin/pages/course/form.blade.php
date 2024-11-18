@@ -63,7 +63,7 @@
                             </div>
                         </div> --}}
 
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        {{-- <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="mb-3">
                                 <label class="form-label" for="category">Category</label>
                                 <input type="text" class="form-control" placeholder="Category" name="category" required value="{{ isset($course) ? $course->category : old('category') }}">
@@ -71,7 +71,7 @@
                                     <span class="text-danger">{{ $errors->first('category') }}</span>
                                 @endif
                             </div>
-                        </div>
+                        </div> --}}
 
 
                         <div class="col-lg-6 col-md-6 col-sm-12">
@@ -84,7 +84,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        {{-- <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="mb-3">
                                 <label class="form-label" for="rating">Rating</label>
                                 <input type="number" step="0.1" class="form-control" placeholder="Rating" name="rating" required value="{{ isset($course) ? $course->rating : old('rating') }}">
@@ -92,9 +92,9 @@
                                     <span class="text-danger">{{ $errors->first('rating') }}</span>
                                 @endif
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        {{-- <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="mb-3">
                                 <label class="form-label" for="num_ratings">Number of Ratings</label>
                                 <input type="number" class="form-control" placeholder="Number of Ratings" name="num_ratings" required value="{{ isset($course) ? $course->num_ratings : old('num_ratings') }}">
@@ -102,7 +102,7 @@
                                     <span class="text-danger">{{ $errors->first('num_ratings') }}</span>
                                 @endif
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="mb-3">
@@ -116,7 +116,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="mb-3">
-                                <label class="form-label" for="duration">Duration (hours)</label>
+                                <label class="form-label" for="duration">Duration (Month)</label>
                                 <input type="number" step="0.1" class="form-control" placeholder="Duration" name="duration" required value="{{ isset($course) ? $course->duration : old('duration') }}">
                                 @if($errors->any())
                                     <span class="text-danger">{{ $errors->first('duration') }}</span>
@@ -134,7 +134,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6 col-md-6 col-sm-12">
+                        {{-- <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="mb-3">
                                 <label class="form-label" for="language">Language</label>
                                 <input type="text" class="form-control" placeholder="Language" name="language" required value="{{ isset($course) ? $course->language : old('language') }}">
@@ -142,7 +142,7 @@
                                     <span class="text-danger">{{ $errors->first('language') }}</span>
                                 @endif
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="mb-3">

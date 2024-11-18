@@ -47,6 +47,10 @@ class CourseController extends Controller
 
         try {
             DB::beginTransaction();
+            $data['category'] = 'learning';
+            $data['rating'] = 5;
+            $data['num_ratings']  = 100;
+            $data['language']  = 'english';
             $course = $this->courseRepository->store($data);
             if (isset($data['file'])) {
                 $response = $this->fileUploader->upload($data['file'], "course");
