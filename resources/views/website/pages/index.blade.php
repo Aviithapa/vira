@@ -30,7 +30,7 @@
           <div class="primary_btn w-48">
             <a
               class="react_button flex justify-center gap-4 py-2 px-4 rounded bg-[var(--primaryColor)] text-white"
-              href=""
+              href="/student-join"
             >
               <span class="btn_text">View All Course</span>
               <span>
@@ -104,7 +104,7 @@
         </div>
         <div class="w-48">
           <a
-            href="/about-us"
+            href="/about"
             class="px-4 py-2 bg-[var(--primaryColor)] text-white rounded flex gap-4 items-center justify-center"
           >
             <span>About</span>
@@ -119,7 +119,7 @@
   <div class="testimonial_container">
     <div class="container bg-[var(--primaryColor)] flex flex-col text-white py-6 px-6 md:flex-row md:gap-16">
         <div class="container--fluid md:flex md:gap-16">
-          <div class="left order-2 py-4 space-y-6 md:order-1">
+          <div class="left order-2 py-4 space-y-6 md:order-1 md:w-[75%]">
             <div class="quotation_container">
               <span>
                 <svg
