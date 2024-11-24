@@ -99,7 +99,7 @@
           <p
             class="disc text-base leading-[1.9] text-[var(--bodyColor)] font-[500]"
           >
-          {!! \Illuminate\Support\Str::words($about->content, 1000, '...') !!}
+          {!! truncateText($about->content, 1000, '...') !!}
         </p>
         </div>
         <div class="w-48">
