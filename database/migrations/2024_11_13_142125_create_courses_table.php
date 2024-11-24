@@ -28,8 +28,8 @@ return new class extends Migration
             $table->string('skill_level');
             $table->string('language');
             $table->integer('students');
-            $table->timestamps();
             $table->foreign('course_category_id')->references('id')->on('course_categories')->onDelete('cascade');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

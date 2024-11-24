@@ -199,6 +199,61 @@
                             </div>
                         @endif
 
+
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="image">Academic Content Document</label>
+                                <input type="file" class="form-control" name="file" accept="image/*">
+                                @if($errors->any())
+                                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                                @endif
+                            </div>
+                            @if(isset($course->image))
+                                     <img src="{{ getImage($course->image) }}" style="height: 200px;"/>
+                             @endif
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="image">Syllabus Document</label>
+                                <input type="file" class="form-control" name="file" accept="image/*">
+                                @if($errors->any())
+                                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                                @endif
+                            </div>
+                            @if(isset($course->image))
+                                     <img src="{{ getImage($course->image) }}" style="height: 200px;"/>
+                             @endif
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="image">Notes Document</label>
+                                <input type="file" class="form-control" name="file" accept="image/*">
+                                @if($errors->any())
+                                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                                @endif
+                            </div>
+                            @if(isset($course->image))
+                                     <img src="{{ getImage($course->image) }}" style="height: 200px;"/>
+                             @endif
+                        </div>
+
+                        <div class="col-lg-3 col-md-3 col-sm-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="image">MCQ Document</label>
+                                <input type="file" class="form-control" name="file" accept="image/*">
+                                @if($errors->any())
+                                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                                @endif
+                            </div>
+                            @if(isset($course->image))
+                                     <img src="{{ getImage($course->image) }}" style="height: 200px;"/>
+                             @endif
+                        </div>
+                       
+                       
+
                     </div>
                     <button class="btn btn-primary mt-5" type="submit">Submit form</button>
                 </form>

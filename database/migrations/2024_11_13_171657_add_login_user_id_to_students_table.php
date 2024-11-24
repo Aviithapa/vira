@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::table('student_forms', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-
         });
     }
 

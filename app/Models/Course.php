@@ -14,7 +14,9 @@ class Course extends Model
     protected $fillable = [
         'title', 'course_category_id', 'category', 'last_update', 'description',
         'academic_content', 'curriculum', 'image', 'price', 'rating',
-        'num_ratings', 'lectures', 'duration', 'skill_level', 'language', 'students'
+        'num_ratings', 'lectures', 'duration', 'skill_level', 'language', 'students',
+        'syllabus_url', 'academic_content_url',
+        'notes_url','mcq_url'
     ];
 
     public function courseCategory()
