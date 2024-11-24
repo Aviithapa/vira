@@ -24,11 +24,13 @@ class Course extends Model
         return $this->belongsTo(CourseCategory::class, 'course_category_id');
     }
 
-    public function getImageUrlAttribute(): ?string
+    public function getImageUrlAttribute()
     {
         if ($this->image) {
             // Generate the full URL of the image
             return Storage::url($this->image);
         }
     }
+
+   
 }

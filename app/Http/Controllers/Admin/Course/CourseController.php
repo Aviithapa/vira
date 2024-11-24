@@ -60,6 +60,40 @@ class CourseController extends Controller
                 $this->mediaRepository->store($response);
             }
 
+            if (isset($data['academic_content_url'])) {
+                $response = $this->fileUploader->upload($data['academic_content_url'], "course");
+                $course->academic_content_url = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            if (isset($data['syllabus_url'])) {
+                $response = $this->fileUploader->upload($data['syllabus_url'], "course");
+                $course->syllabus_url = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            if (isset($data['notes_url'])) {
+                $response = $this->fileUploader->upload($data['notes_url'], "course");
+                $course->notes_url = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            if (isset($data['mcq_url'])) {
+                $response = $this->fileUploader->upload($data['mcq_url'], "course");
+                $course->mcq_url = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            
+
             DB::commit();
             session()->flash('success', 'Course has been created successfully.');
             return redirect()->route('course.index');
@@ -86,10 +120,47 @@ class CourseController extends Controller
 
             $course = $this->courseRepository->update($id, $data);
 
+
             if (isset($data['file'])) {
                 $response = $this->fileUploader->upload($data['file'], "course");
                 $course = $this->courseRepository->findOrFail($id);
                 $course->image = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            if (isset($data['academic_content_url'])) {
+                $response = $this->fileUploader->upload($data['academic_content_url'], "course");
+                $course = $this->courseRepository->findOrFail($id);
+                $course->academic_content_url = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            if (isset($data['syllabus_url'])) {
+                $response = $this->fileUploader->upload($data['syllabus_url'], "course");
+                $course = $this->courseRepository->findOrFail($id);
+                $course->syllabus_url = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            if (isset($data['notes_url'])) {
+                $response = $this->fileUploader->upload($data['notes_url'], "course");
+                $course = $this->courseRepository->findOrFail($id);
+                $course->notes_url = $response['path'];
+                $course->save();
+                $response['course_id'] = $course->id;
+                $this->mediaRepository->store($response);
+            }
+
+            if (isset($data['mcq_url'])) {
+                $response = $this->fileUploader->upload($data['mcq_url'], "course");
+                $course = $this->courseRepository->findOrFail($id);
+                $course->mcq_url = $response['path'];
                 $course->save();
                 $response['course_id'] = $course->id;
                 $this->mediaRepository->store($response);

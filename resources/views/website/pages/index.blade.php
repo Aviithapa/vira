@@ -99,7 +99,7 @@
           <p
             class="disc text-base leading-[1.9] text-[var(--bodyColor)] font-[500]"
           >
-          {!! truncateText($about->content, 1000, '...') !!}
+          {!! truncateText($about->content, 1100, '...') !!}
         </p>
         </div>
         <div class="w-48">
@@ -107,7 +107,7 @@
             href="/about"
             class="px-4 py-2 bg-[var(--primaryColor)] text-white rounded flex gap-4 items-center justify-center"
           >
-            <span>About</span>
+            <span>Read More</span>
             <span>
               <i class="fa-solid fa-arrow-right"></i>
             </span>
@@ -119,7 +119,7 @@
   <div class="testimonial_container">
     <div class="container bg-[var(--primaryColor)] flex flex-col text-white py-6 px-6 md:flex-row md:gap-16">
         <div class="container--fluid md:flex md:gap-16">
-          <div class="left order-2 py-4 space-y-6 md:order-1 w-[70%]" style="width: 65%;">
+          <div class="left ord er-2 py-4 space-y-6 md:order-1 w-[70%]" style="width: 65%;">
             <div class="quotation_container">
               <span>
                 <svg

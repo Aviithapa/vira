@@ -58,6 +58,11 @@
               <h2 class="capitalize font-semibold text-xl py-8">Syllabus</h2>
               <p>
                    {!! $course->decription !!} 
+                   {{-- <object class="pdf" 
+                   data={{ getImage($course->syllabus_url) }}
+                   width="800"
+                   height="500">
+           </object> --}}
               </p>
             </div>
 
@@ -67,12 +72,19 @@
               </h2>
               <p>
                 {!! $course->academic_content !!} 
+          
+                {{-- <object class="pdf" 
+                data={{ getImage($course->academic_content_url) }}
+                width="800"
+                height="500"> --}}
               </p>
             </div>
             <div id="tab3" class="tab-content h-full hidden min-h-[1100px]">
               <h2 class="capitalize font-semibold text-xl py-8">Notes</h2>
               @auth
                 <p>{!! $course->curriculum !!}</p>
+                {{ $course->notes_url }}
+
                 @else
                 <div class="flex justify-center h-full">
                     <i class="fa-solid fa-lock text-4xl text-gray-500"></i>
@@ -88,6 +100,7 @@
               <h2 class="capitalize font-semibold text-xl py-8">MCQ</h2>
               @auth
                 <p>{!! $course->curriculum !!}</p>
+                {{ $course->mcq_url }}
                 @else
                 <div class="flex justify-center h-full">
                     <i class="fa-solid fa-lock text-4xl text-gray-500"></i>

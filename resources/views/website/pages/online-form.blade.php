@@ -155,7 +155,7 @@
         <!-- Parent Details -->
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 mt-4">
             <div>
-                <label for="father_mother_name" class="block font-medium text-gray-700">Father/Mother Name</label>
+                <label for="father_mother_name" class="block font-medium text-gray-700">Guardian Name</label>
                 <input type="text" name="father_mother_name" value="{{ old('father_mother_name') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
                 @error('father_mother_name')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -163,7 +163,7 @@
             </div>
 
             <div>
-                <label for="father_mother_contact" class="block font-medium text-gray-700">Father/Mother Contact No.</label>
+                <label for="father_mother_contact" class="block font-medium text-gray-700">Guardian Contact No.</label>
                 <input type="text" name="father_mother_contact" value="{{ old('father_mother_contact') }}" class="w-full mt-1 border-gray-300 rounded-md shadow-sm" />
                 @error('father_mother_contact')
                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -173,7 +173,7 @@
 
         <!-- Notes -->
         <div class="mt-4">
-            <label for="notes" class="block font-medium text-gray-700">Notes</label>
+            <label for="notes" class="block font-medium text-gray-700">Remarks</label>
             <textarea name="notes" rows="4" class="w-full mt-1 border-gray-300 rounded-md shadow-sm">{{ old('notes') }}</textarea>
             @error('notes')
                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>

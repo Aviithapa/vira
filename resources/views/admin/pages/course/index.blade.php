@@ -29,7 +29,7 @@
                                                 <tr>
                                                     <th>#</th>
                                                     <th>Name</th>
-                                                    <th>Category</th>
+                                                    {{-- <th>Category</th> --}}
                                                      <th>Price</th>
                                                     <th>Edit</th>
                                                 </tr>
@@ -39,7 +39,7 @@
                                                 <tr>
                                                     <td>{{ ++ $loop->index  }}</td>
                                                     <td>{{ $data->title }}</td>
-                                                    <td>{{ $data->courseCategory->name}}</td>
+                                                    {{-- <td>{{ $data->courseCategory->name}}</td> --}}
                                                      <td>{{ $data->price}}</td>
                                                     <td>
                                                         <a href="{{ route( 'course.edit', ['course' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>
