@@ -58,11 +58,14 @@
               <h2 class="capitalize font-semibold text-xl py-8">Syllabus</h2>
               <p>
                    {!! $course->decription !!} 
-                   {{-- <object class="pdf" 
-                   data={{ getImage($course->syllabus_url) }}
-                   width="800"
-                   height="500">
-           </object> --}}
+                   @if (isset($course->syllabus_url))
+                            <object class="pdf" 
+                            data={{ getImage($course->syllabus_url) }}
+                            width="800"
+                            height="700">
+                          </object>
+                   @endif
+                   
               </p>
             </div>
 
@@ -72,18 +75,26 @@
               </h2>
               <p>
                 {!! $course->academic_content !!} 
-          
-                {{-- <object class="pdf" 
+                @if (isset($course->academic_content_url))
+                <object class="pdf" 
                 data={{ getImage($course->academic_content_url) }}
                 width="800"
-                height="500"> --}}
+                height="700">
+                </object>
+                @endif
               </p>
             </div>
             <div id="tab3" class="tab-content h-full hidden min-h-[1100px]">
               <h2 class="capitalize font-semibold text-xl py-8">Notes</h2>
               @auth
                 <p>{!! $course->curriculum !!}</p>
-                {{ $course->notes_url }}
+                @if (isset($course->notes_url))
+                <object class="pdf" 
+                  data={{ getImage($course->notes_url) }}
+                  width="800"
+                  height="700">
+              </object>
+              @endif
 
                 @else
                 <div class="flex justify-center h-full">
@@ -100,7 +111,13 @@
               <h2 class="capitalize font-semibold text-xl py-8">MCQ</h2>
               @auth
                 <p>{!! $course->curriculum !!}</p>
-                {{ $course->mcq_url }}
+                @if (isset($course->mcq_url))
+                  <object class="pdf" 
+                    data={{ getImage($course->mcq_url) }}
+                    width="800"
+                    height="700">
+                </object>
+                @endif
                 @else
                 <div class="flex justify-center h-full">
                     <i class="fa-solid fa-lock text-4xl text-gray-500"></i>
@@ -112,7 +129,8 @@
         </div>
         <div class="lg:w-[30%] lg:relative">
           <div
-            class="p-4 border shadow-xl rounded space-y-4 lg:relative lg:right-0 lg:top-[-10%] lg:z-50"
+            class="p-4 border shadow-xl rounded space-y-4 lg:relative lg:right-0  lg:z-50"
+            style="top: -100px"
           >
             <figure>
               <img
