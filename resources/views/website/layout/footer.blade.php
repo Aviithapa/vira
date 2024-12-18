@@ -6,8 +6,13 @@
       class="container--fluid grid gap-12 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_2fr]"
     >
       <div class="left space-y-8">
-        <div class="logo_container w-28">
-          <img src="{{ getSiteSetting('logo_image') }}" alt="logo image" />
+        <div class="flex flex-row items-center">
+          <div class="w-28">
+            <img src="{{ getSiteSetting('logo_image') }}" alt="{{ getSiteSetting('site_title') }}" style="height: 80px; width:80px;"/>
+          </div>
+          <div style="width: 250px; text-align:center; margin-left: -35px; font-weight: 600; text-transform: uppercase;">
+             Vira Institute of science & Technology
+          </div>
         </div>
         <div class="desc">
           <p class="leading-[1.6]">

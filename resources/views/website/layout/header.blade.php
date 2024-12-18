@@ -32,9 +32,12 @@ id="nav_overlay"
   <div class="py-2">
     <div class="container--fluid">
       <div class="flex items-center justify-between">
-        <div class="">
+        <div class="flex flex-row items-center">
           <div class="w-28">
             <img src="{{ getSiteSetting('logo_image') }}" alt="{{ getSiteSetting('site_title') }}" style="height: 80px; width:80px;"/>
+          </div>
+          <div style="width: 250px; text-align:center; margin-left: -35px; font-weight: 600; text-transform: uppercase;">
+             Vira Institute of science & Technology
           </div>
         </div>
 
@@ -46,7 +49,7 @@ id="nav_overlay"
 
           <div style="padding: 0px 10px">
             <a class="inline-block px-2 py-2 capitalize hover:text-[var(--hoverColor)] hover:text-bold" href="/student-join"
-              >student join</a
+              >student zone</a
             >
           </div>
 
@@ -132,7 +135,7 @@ id="nav_overlay"
         </div>
         <div class="border-b py-2 capitalize">
           <a href="/student-join">
-            <span>student join</span>
+            <span>student zone</span>
           </a>
         </div>
         <div class="border-b py-2 capitalize">

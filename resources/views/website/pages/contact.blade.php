@@ -135,17 +135,7 @@
       </div>
       <!-- map  -->
       <div class="h-full">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.367130148492!2d85.34020015189226!3d27.69900911899382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19869793bff7%3A0xf2f77266b222365a!2sSinamangal%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1729768788234!5m2!1sen!2snp"
-          width="100%"
-          title="Google map showing address of vera institute"
-          aria-label="Location map"
-          height="100%"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        >
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.1412374740707!2d85.33270867627016!3d27.712925176179397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19004a3523bf%3A0xab5cfbaeaecf6d4!2sVira%20institute%20of%20science%20%26%20technology!5e0!3m2!1sen!2snp!4v1734493713780!5m2!1sen!2snp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </iframe>
       </div>
     </div>
